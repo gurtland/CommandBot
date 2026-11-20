@@ -16,4 +16,12 @@ public class TurretSubsystem extends SubsystemBase {
         turretMotor.configure(turretConfig, ResetMode.kResetSafeParameters,
             PersistMode.kPersistParameters);
     }
+
+    public void runTurret(double tSpeed){
+        turretMotor.set(tSpeed);
+    }
+
+    public void stop() {
+        turretMotor.stopMotor();
+    }
 }

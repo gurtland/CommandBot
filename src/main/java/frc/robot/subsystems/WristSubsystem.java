@@ -16,4 +16,12 @@ public class WristSubsystem extends SubsystemBase {
         wristMotor.configure(wristConfig, ResetMode.kResetSafeParameters,
             PersistMode.kPersistParameters);
     }
+
+    public void runWrist(double wSpeed){
+        wristMotor.set(wSpeed);
+    }
+
+    public void stop() {
+        wristMotor.stopMotor();
+    }
 }
