@@ -40,9 +40,9 @@ public class RobotContainer {
             new RunCommand(
                 () -> { int pov = buttons.getPOV();
             
-                if (pov == 0) {
+                if (pov == 270) {
                     turret.runTurret(0.3);
-                } else if (pov == 180) {
+                } else if (pov == 90) {
                     turret.runTurret(-0.3);
                 } else {
                     turret.stop();
@@ -54,9 +54,9 @@ public class RobotContainer {
             new RunCommand(
                 () -> { int pov = buttons.getPOV();
 
-                if (pov == 270) {
+                if (pov == 0) {
                     wrist.runWrist(0.3);
-                } else if (pov == 90) {
+                } else if (pov == 180) {
                     wrist.runWrist(-0.3);
                 } else {
                     wrist.stop();
@@ -70,7 +70,7 @@ public class RobotContainer {
                 
                 new SequentialCommandGroup(
                 new InstantCommand(() -> launcher.start(), launcher),
-                new WaitCommand(0.25),
+                new WaitCommand(0.05),
                 new InstantCommand(() -> launcher.stop(), launcher)
                 )), launcher
             )
